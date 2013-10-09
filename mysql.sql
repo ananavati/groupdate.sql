@@ -1,7 +1,5 @@
 START TRANSACTION;
 
--- second
-
 DROP FUNCTION IF EXISTS gd_second;
 DELIMITER $$
 CREATE FUNCTION gd_second(ts TIMESTAMP, time_zone VARCHAR(255))
@@ -10,10 +8,8 @@ BEGIN
   RETURN CONVERT_TZ(DATE_FORMAT(CONVERT_TZ(ts, '+00:00', time_zone), '%Y-%m-%d %H:%i:%S'), time_zone, '+00:00');
 END;
 $$
-DELIMITER ;
+DELIMITER;
 
-
--- minute
 
 DROP FUNCTION IF EXISTS gd_minute;
 DELIMITER $$
@@ -23,10 +19,9 @@ BEGIN
   RETURN CONVERT_TZ(DATE_FORMAT(CONVERT_TZ(ts, '+00:00', time_zone), '%Y-%m-%d %H:%i:00'), time_zone, '+00:00');
 END;
 $$
-DELIMITER ;
+DELIMITER;
 
 
--- hour
 
 DROP FUNCTION IF EXISTS gd_hour;
 DELIMITER $$
@@ -39,7 +34,7 @@ $$
 DELIMITER ;
 
 
--- day
+
 
 DROP FUNCTION IF EXISTS gd_day;
 DELIMITER $$
@@ -52,7 +47,7 @@ $$
 DELIMITER ;
 
 
--- week
+
 
 DROP FUNCTION IF EXISTS gd_week;
 DELIMITER $$
@@ -65,7 +60,7 @@ $$
 DELIMITER ;
 
 
--- month
+
 
 DROP FUNCTION IF EXISTS gd_month;
 DELIMITER $$
@@ -78,7 +73,7 @@ $$
 DELIMITER ;
 
 
--- year
+
 
 DROP FUNCTION IF EXISTS gd_year;
 DELIMITER $$
@@ -91,7 +86,7 @@ $$
 DELIMITER ;
 
 
--- hour of day
+
 
 DROP FUNCTION IF EXISTS gd_hour_of_day;
 DELIMITER $$
@@ -104,7 +99,7 @@ $$
 DELIMITER ;
 
 
--- day of week
+
 
 DROP FUNCTION IF EXISTS gd_day_of_week;
 DELIMITER $$
